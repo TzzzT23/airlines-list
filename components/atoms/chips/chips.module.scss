@@ -1,0 +1,13 @@
+.chips {
+  padding: 0.25rem 0.75rem;
+  border-radius: 1.5rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &--active {
+    transition: all 0.3s ease-in-out;
+    color: red;
+    border-color: currentColor;
+  }
+}
