@@ -25,14 +25,13 @@ export default function Flights() {
       setFlights(sortedValue!)
     }
     if (
-      searchParams.has('sort') &&
-      (searchParams.has('airline') ||
-        searchParams.has('price') ||
-        searchParams.has('departureTime'))
+      searchParams.has('airline') ||
+      searchParams.has('price') ||
+      searchParams.has('departureTime')
     ) {
       const filteredValue = filteredFlights(searchParams, flightItems)
       setFlights(filteredValue!)
-    }
+    } else setFlights(flightItems)
   }, [searchParams])
 
   return (
