@@ -1,0 +1,15 @@
+.range {
+  flex: 0 1 100%;
+  max-width: 100%;
+
+  &__placeholders {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+  }
+
+  input {
+    width: 100%;
+  }
+}

@@ -1,22 +1,20 @@
 'use client'
 
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import Chips from 'components/atoms/chips'
 
-import { createParams } from 'utils/helpers'
+import useCreateQueryString from 'utils/hooks/useCreateQueryString'
 import { type SortItem, sortItems } from 'utils/statics/sort'
 import styles from './sort.module.scss'
 
 export default function Sort() {
-  const { push } = useRouter()
-  const pathname = usePathname()
-  const query = useSearchParams()
-  const activeSort = query.get('sort')
+  const { createQueryString, searchParams, pathname, push } =
+    useCreateQueryString(false)
+  const activeSort = searchParams.get('sort')
 
   function sorting(sortValue: SortItem['value']) {
-    const url = pathname + createParams({ sort: sortValue })
+    const url = pathname + '?' + createQueryString('sort', sortValue)
     if (activeSort === sortValue) return
-    push(url)
+    push(url, { scroll: false })
   }
 
   return (
