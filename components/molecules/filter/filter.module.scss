@@ -1,5 +1,46 @@
+@mixin common-styles($size: 100%) {
+  flex: 0 1 $size;
+  max-width: $size;
+}
+
 .filter {
+  display: flex;
+  flex-wrap: wrap;
   background-color: #f2f2f2;
-  padding: 1rem 0.5rem;
+  padding: 1rem;
   border-radius: 0.5rem;
+  position: -webkit-sticky;
+  position: sticky;
+  inset-block-start: 1rem;
+
+  &__header {
+    @include common-styles();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--title {
+      font-size: 1.5rem;
+    }
+
+    &--action button {
+      all: unset;
+      color: red;
+      cursor: pointer;
+    }
+  }
+
+  &--divider {
+    @include common-styles(90%);
+    border-block-end: 1px solid #dcdcdc;
+    margin-block: 1rem;
+    margin-inline: auto;
+  }
+
+  &--title {
+    @include common-styles();
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-block-end: 1rem;
+  }
 }

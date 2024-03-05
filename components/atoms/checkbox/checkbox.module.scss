@@ -1,0 +1,13 @@
+.checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+
+  &--item {
+    flex: 0 1 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+  }
+}
