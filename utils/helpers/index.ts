@@ -6,17 +6,6 @@ export function isEmpty<Obj>(value: Obj) {
   return !(Object.keys(value).length > 0)
 }
 
-export function createParams<P extends object>(params?: P | void) {
-  if (typeof params === 'undefined' || isEmpty(params)) return ''
-  const sign = '?'
-  return (
-    sign +
-    Object.entries(params)
-      .map(([key, value]) => `${key}=${value}`)
-      .join('&')
-  )
-}
-
 export function sortedFlights(sortValue: string | null, flights: FlightItem[]) {
   return flights.toSorted((a, b) => {
     if (sortValue === 'lowPrice') return a.price - b.price
