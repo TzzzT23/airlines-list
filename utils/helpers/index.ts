@@ -39,7 +39,7 @@ export function filteredFlights(
         .split(':')?.[0]
       const departureRange = departureTimeFilter.split('-')
 
-      return departureRange?.[1] > hour && departureRange?.[0] < hour
+      return departureRange?.[1] >= hour && departureRange?.[0] <= hour
     })
   }
   if (hasSort) result = sortedFlights(filterValues.get('sort'), result)
