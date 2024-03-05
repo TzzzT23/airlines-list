@@ -19,6 +19,7 @@
       display: flex;
       flex-wrap: wrap;
       row-gap: 2rem;
+      align-content: start;
     }
 
     [data-selector='filter'] {
