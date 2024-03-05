@@ -1,11 +1,6 @@
 import type { ReadonlyURLSearchParams } from 'next/navigation'
 import type { FlightItem } from 'utils/statics/flights'
 
-export function isEmpty<Obj>(value: Obj) {
-  if (value == null) return true
-  return !(Object.keys(value).length > 0)
-}
-
 export function sortedFlights(sortValue: string | null, flights: FlightItem[]) {
   return flights.toSorted((a, b) => {
     if (sortValue === 'lowPrice') return a.price - b.price
