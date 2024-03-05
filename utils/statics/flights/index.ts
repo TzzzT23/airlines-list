@@ -43,7 +43,7 @@ export const flightItems: FlightItem[] = [
   {
     airline: 'KishAir',
     price: 10000000,
-    flightTime: '2023-12-28T16:45:00',
+    flightTime: '2023-12-28T03:45:00',
   },
   {
     airline: 'Aseman',
@@ -53,12 +53,12 @@ export const flightItems: FlightItem[] = [
   {
     airline: 'AirTour',
     price: 9500000,
-    flightTime: '2023-12-28T17:45:00',
+    flightTime: '2023-12-28T06:45:00',
   },
   {
     airline: 'IranAir',
     price: 11800000,
-    flightTime: '2023-12-28T15:30:00',
+    flightTime: '2023-12-28T19:30:00',
   },
   {
     airline: 'Aseman',
