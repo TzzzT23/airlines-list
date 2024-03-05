@@ -27,9 +27,13 @@ export default function Filter() {
     <div className={styles['filter']}>
       <div className={styles['filter__header']}>
         <div className={styles['filter__header--title']}>فیلترها</div>
-        <div className={styles['filter__header--action']}>
-          <button onClick={clearFilters}>حذف فیلترها</button>
-        </div>
+        {(searchParams.has('airline') ||
+          searchParams.has('price') ||
+          searchParams.has('departureTime')) && (
+          <div className={styles['filter__header--action']}>
+            <button onClick={clearFilters}>حذف فیلترها</button>
+          </div>
+        )}
       </div>
       <div className={styles['filter--divider']} />
       <div className={styles['filter--title']}>ایرلاین</div>
